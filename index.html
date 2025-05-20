@@ -1,64 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
-	<script src="https://kit.fontawesome.com/a9a68f8b3f.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seounggi Seo - Portfolio</title>
+    <script src="https://kit.fontawesome.com/a9a68f8b3f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header id="header">
-	  <!-- 이력서 헤더 : 이름과 타이틀 작성 -->
-	  <h1>Hi, I'm Seounggi Seo</h1>
-	  <hr>
-	  I am working as an undergraduate researcher at DI LAB under the supervision of Professor Kim Seong-seok. In the lab, I mainly dealt with image processing and time series data processing.
-	  <hr>
-	</header>
+    <header>
+        <h1>Welcome, I'm Seounggi Seo</h1>
+        <p>Undergraduate Researcher at DI LAB</p> 
+		<p>Specializing in Image Processing and Time Series Data</p>
+        <hr>
+    </header>
 
-	<main>
-	  <article id="mainLeft">
-	    <section>
-	      <h2>CONTACT</h2>
-	      <!-- 소셜 미디어를 비롯한 연락처 정보 -->
-	      <p>
-	      	<i class= 'fa fa-envelope' aria-hidden='true'></i>
-	      	<a href = "mailto:dracus0207@gmail.com">dracus0207@gmail.com</a>
-	      </p>
-	      <p>
-	      	<i class= 'fa fa-github' aria-hidden='true'></i>
-	      	<a href = "https://github.com/AIS-SG">Github</a>
-	      </p>
-	      <p>
-	      	<i class = 'fa fa-paper' aria-hidden='true'></i>
-	      	<a href="https://www.dbpia.co.kr/author/authorDetail?ancId=5404852">DBpia</a>
- 	      </p>
-	    </section>
-	    <section>
-	      <h2>SKILLS</h2>
-	      <!-- 자신이 잘할 수 있는 분야 -->
-	      <p>Python</p>
-	      <p>Accustic Guitar, Electric Guitar, Bass Guitar, Drum</p>
-	     </section>
-	     <section>
-	      <h2>EDUCATION</h2>
-	      <!-- 학력 -->
-		  <p>구리고등학교 (2019 - 2021)</p>
-	      <p>서경대학교 - 소프트웨어 전공 (2022-Current)</p>
-	    </section>            
-	  </article>
-	  <article id="mainRight">
-	    <section>
-	     <h2>ABOUT</h2>
-	     <!-- 자기 소개 -->
-	    </section>
-	    <section>
-	      <h2>Paper</h2>
-	      <!-- 경력 작성 -->
-	    </section>
-	  </article>
-	</main>
+    <main>
+        <aside>
+			<img src="./profile.JPG" alt="Profile Photo" class="profile-photo">
+            <section>
+                <h2>CONTACT</h2>
+                <ul>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:dracus0207@gmail.com">dracus0207@gmail.com</a></li>
+                    <li><i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/AIS-SG">Github</a></li>
+                    <li><i class="fa fa-paper" aria-hidden="true"></i> <a href="https://www.dbpia.co.kr/author/authorDetail?ancId=5404852">DBpia</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>SKILLS</h2>
+                <ul>
+                    <li>Python, C++</li>
+                    <li>Acoustic Guitar, Electric Guitar, Bass Guitar, Drum</li>
+                </ul>
+            </section>
+            <section>
+                <h2>EDUCATION</h2>
+                <ul>
+                    <li>Guri high school (2019 - 2021)</li>
+                    <li>Seokyeong Univ. - Department of Software Engineering (2022 - Current)</li>
+                </ul>
+            </section>
+			<section>
+				<h2>Researcher Experiences</h2>
+				<ul>
+					<li>사단법인 한국인공지능연구소 오픈랩 7기 (2020) </li>
+					<li>Seokyeong Univ. DI LAB under the supervision of Prof.Sungsuk Kim (2023-current)</li>
+				</ul>
+			</section>
+        </aside>
+        <article>
+            <section>
+                <h2>ABOUT ME</h2>
+                <p>I am a passionate individual who loves music and technology. I can play various instruments and have composed music. My journey with artificial intelligence began in high school, where I worked on projects like cell classification using a Raspberry Pi and developing a cafe kiosk chatbot.</p>
+                <p>As an undergraduate researcher, I have focused on lightweight handwriting recognition and optical music recognition (OMR), contributing to several publications. My goal is to combine my love for music and AI to create innovative solutions.</p>
+				<p>I am studying music beat, melody analysis, and chord analysis, and I am studying LLM Fine Tuning and RAG. So I am researching to develop a composition AI through LLM Fine Tuning or RAG.</p>
+            </section>
+            <section>
+                <h2>PUBLICATIONS</h2>
+                <ul>
+					<li>
+                        <strong class="publication-title">Preprocessing algorithm for offline Hangul-handwritten recognition</strong><br>
+                        <span class="authors">Soyeon Lee, Seunggi Seo, Sun Ok Yang, Sungsuk Kim</span><br>
+                        <span class="publication-info">The Proceedings of the 2023 KIIT Summer Conference</span>
+                    </li>
+					<li>
+                        <strong class="publication-title">Preprocessing algorithm for light-weight Korean handwriting characters recognition</strong><br>
+                        <span class="authors">Seunggi Seo, Dongok Yu, Sungsuk Kim, Sun Ok Yang</span><br>
+                        <span class="publication-info">The Proceedings of the 2023 KIIT Autumn Conference</span>
+                    </li>
+                    <li>
+                        <strong class="publication-title">Preprocessing algorithms for Optical Music Recognition (OMR)</strong><br>
+                        <span class="authors">Seunggi Seo, Sungsuk Kim, Jaehyun Kim</span><br>
+                        <span class="publication-info">The Proceedings of the 2024 KIIT Autumn Conference</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>AWARDS</h2>
+                <ul>
+                    <li>KIIT 2023 추계학술대회 우수논문상 은상</li>
+                    <li>KIIT 2024 추계학술대회 우수논문상 은상</li>
+                </ul>
+            </section>
+			<section>
+				<h2>PROJECTS</h2>
+				<ul>
+					<li>projects</li>
+				</ul>
+			</section>
+        </article>
+    </main>
+	<section class ='gallery'>
+		<h2>GALLERY</h2>
+		<div class = "gallery-images">
+			<img src="electric.JPG" alt="Gallery Photo 1">
+			<img src="bass.jpg" alt="Gallery Photo 2">
+			<img src="drum.jpg" alt="Gallery Photo 3">
+		</div>
+	</section>
+	<section class="Performance">
+		<h2>PERFORMANCE</h2>
+		<div class = "performance-list">
+			<!-- <img -->
+		</div>
+	</section>
 </body>
 </html>
-
-

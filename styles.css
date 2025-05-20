@@ -1,0 +1,137 @@
+/* 전체 페이지 스타일 */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+/* 헤더 스타일 */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+header hr {
+    border: none;
+    border-top: 2px solid #333;
+    margin: 10px 0;
+}
+
+/* 메인 콘텐츠 레이아웃 */
+main {
+    display: flex;
+    gap: 20px;
+}
+
+/* 좌측 사이드바 스타일 */
+aside {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 우측 메인 콘텐츠 스타일 */
+article {
+    flex: 2;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 섹션 제목 스타일 */
+section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+/* 목록 스타일 */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+ul li i {
+    margin-right: 10px;
+    color: #007BFF;
+}
+
+/* 링크 스타일 */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.profile-photo{
+	display: block;
+    margin: 0 auto 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.gallery {
+	margin-top:15px;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0,0,0.1)
+}
+.gallery-images{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+.gallery img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+/* 출판물 디자인 */
+.publication-title{
+	font-weight: bold;
+	color: #007BFF;
+}
+
+.authors{
+	font-style: italic;
+}
+
+.publication-info{
+	color: #555;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside, article {
+        margin-bottom: 20px;
+    }
+	.gallery{
+		justify-content: center;
+	}
+}
