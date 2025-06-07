@@ -7,6 +7,86 @@
     <script src="https://kit.fontawesome.com/a9a68f8b3f.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .project-item {
+            cursor: pointer;
+            padding: 5px 0;
+        }
+        .project-item:hover {
+            color: #007bff;
+        }
+        .gallery-container {
+            position: relative;
+            margin-bottom: 15px;
+            max-width: 100%;
+            height: 200px; /* 갤러리 높이 고정 */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery-media {
+            max-width: 100%;
+            max-height: 200px; /* 이미지와 비디오의 최대 높이 동일 */
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 비율 유지 */
+            display: none;
+            border-radius: 5px;
+        }
+        .gallery-media.active {
+            display: block;
+        }
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .gallery-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 3px;
+        }
+        .gallery-nav button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -92,17 +172,17 @@
             </section>
 			<section>
 				<h2>PROJECTS</h2>
-				<ul>
-                    <li>smart mirror 제작</li>
-                    <li>고카드 제작</li>
-					<li>RASA를 활용한 Cafe 키오스크 주문 챗봇</li>
-                    <li>Chess Game AI</li>
-                    <li>오프라인 한글 손글씨 인식</li>
-                    <li>라즈베리파이/아두이노를 이용한 미세먼지 센서</li>
-                    <li>DallE를 이용한 아동 안전 교육을 위한 이미지 생성 사이트</li>
-                    <li>경량화 OMR 전처리 알고리즘 프로젝트</li>
-                    <li>음원파일 코드와 멜로디 박자 분석 프로젝트 (진행중)</li>
-                    <li>Llama와 RAG기법을 이용한 음악 작곡 AI (진행중)</li>
+				<ul id = "project-list">
+                    <li class="project-item" data-project-id="cafe-kiost">RASA를 활용한 Cafe 키오스크 주문 챗봇</li>
+                    <li class="project-item" data-project-id="gocart">고카트 제작</li>
+                    <li class="project-item" data-project-id="smart-mirror">smart mirror 제작</li>
+                    <!-- <li class="project-item" data-project-id="chess-ai">Chess Game AI</li> -->
+                    <li class="project-item" data-project-id="handwriting">오프라인 한글 손글씨 인식</li>
+                    <li class="project-item" data-project-id="dust-sensor">라즈베리파이/아두이노를 이용한 미세먼지 센서</li>
+                    <li class="project-item" data-project-id="dalle-safety">DallE를 이용한 아동 안전 교육을 위한 이미지 생성 사이트</li>
+                    <li class="project-item" data-project-id="omr-preprocessing">경량화 OMR 전처리 알고리즘 프로젝트</li>
+                    <li class="project-item" data-project-id="music-analysis">음원파일 코드와 멜로디 박자 분석 프로젝트 (진행중)</li>
+                    <li class="project-item" data-project-id="music-ai">Llama와 RAG기법을 이용한 음악 작곡 AI (진행중)</li>
 				</ul>
 			</section>
             <section class="Performance">
@@ -130,11 +210,170 @@
 			<img src="drum.jpg" alt="Gallery Photo 3">
 		</div>
 	</section>
-	<!-- <section class="Performance">
-		<h2>PERFORMANCE</h2>
-		<div class = "performance-list">
-			 <img 
-		</div>
-	</section> -->
-</body>
+    <div class="modal" id = "project-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <div class="gallery-container" id="gallery-container">
+                <!-- 이미지는 JavaScript에서 동적으로 추가 -->
+                <div class="gallery-nav">
+                    <button id="gallery-prev">&lt;</button>
+                    <button id="gallery-next">&gt;</button>
+                </div>
+            </div>
+    </div>
+    <script>
+        // 프로젝트 설명 데이터
+        const projectDetails = {
+            "cafe-kiost": {
+                title: "RASA를 활용한 Cafe 키오스크 주문 챗봇",
+                description: "RASA 프레임워크를 사용해 카페 키오스크에서 주문을 처리하는 대화형 챗봇을 개발했습니다. 자연어 처리(NLP)를 통해 사용자의 주문을 이해하고 메뉴 추천 기능을 제공합니다."
+            },
+            "gocart": {
+                title: "고카트 제작",
+                description: "고카트(GoCart)는 간단한 카드 게임 애플리케이션으로, Java를 사용해 개발했습니다. 사용자 간 대결 모드와 AI 대전 모드를 지원하며, 간단한 UI로 접근성을 높였습니다.",
+                media: [{type: "image", src: "./images/gocart1.jpg"}, 
+                        {type: "image", src:"./images/gocart2.jpg"},
+                        {type: "video", src:"./images/gocart.mp4"}]
+            },
+            "smart-mirror": {
+                title: "smart mirror 제작",
+                description: "라즈베리파이를 활용하여 날씨, 일정, 뉴스 등을 표시하는 스마트 미러를 제작했습니다. Python과 React를 사용해 사용자 인터페이스를 구현하고, 실시간 데이터 연동을 통해 사용자 맞춤 정보를 제공합니다."
+                
+            },
+            
+            "chess-ai": {
+                title: "Chess Game AI",
+                description: "Python을 사용해 체스 게임 AI를 개발했습니다. Minimax 알고리즘과 알파-베타 가지치기를 활용하여 AI의 움직임을 최적화했으며, 사용자와의 대결 모드를 구현했습니다."
+            },
+            "handwriting": {
+                title: "오프라인 한글 손글씨 인식",
+                description: "오프라인 환경에서 한글 손글씨를 인식하는 알고리즘을 개발했습니다. 이미지 전처리 기법과 CNN 모델을 활용하여 높은 정확도를 달성했으며, KIIT 학술대회에서 우수논문상을 수상했습니다."
+            },
+            "dust-sensor": {
+                title: "라즈베리파이/아두이노를 이용한 미세먼지 센서",
+                description: "라즈베리파이와 아두이노를 활용해 실시간 미세먼지 농도를 측정하는 센서를 제작했습니다. 데이터를 시각화하여 사용자에게 미세먼지 정보를 직관적으로 제공합니다."
+            },
+            "dalle-safety": {
+                title: "DallE를 이용한 아동 안전 교육을 위한 이미지 생성 사이트",
+                description: "Dall-E API를 활용하여 아동 안전 교육용 이미지를 생성하는 웹사이트를 개발했습니다. React로 프론트엔드를 구성하고, 안전 교육 시나리오에 맞는 이미지를 동적으로 생성합니다."
+            },
+            "omr-preprocessing": {
+                title: "경량화 OMR 전처리 알고리즘 프로젝트",
+                description: "악보를 디지털 데이터로 변환하는 광학 음악 인식(OMR) 시스템의 전처리 알고리즘을 개발했습니다. 경량화된 알고리즘으로 처리 속도를 개선했으며, KIIT 2024 추계학술대회에서 우수논문상을 수상했습니다."
+            },
+            "music-analysis": {
+                title: "음원파일 코드와 멜로디 박자 분석 프로젝트 (진행중)",
+                description: "음원 파일에서 코드 진행과 멜로디, 박자를 분석하는 프로젝트입니다. Python과 Librosa 라이브러리를 사용해 음원 데이터를 분석하며, 음악 이론을 적용해 자동 분석 시스템을 구축 중입니다."
+            },
+            "music-ai": {
+                title: "Llama와 RAG기법을 이용한 음악 작곡 AI (진행중)",
+                description: "Llama 모델과 RAG(Retrieval-Augmented Generation) 기법을 활용해 음악 작곡 AI를 개발 중입니다. 사용자의 입력(예: 장르, 분위기)에 맞춰 악보와 멜로디를 생성하는 것을 목표로 합니다."
+            }
+        };
+
+        // 모달 요소
+        const modal = document.getElementById("project-modal");
+        const modalTitle = document.getElementById("modal-title");
+        const galleryContainer = document.getElementById("gallery-container");
+        const modalDescription = document.getElementById("modal-description");
+        const closeModal = document.querySelector(".modal-close");
+        const prevButton = document.getElementById("gallery-prev");
+        const nextButton = document.getElementById("gallery-next");
+
+        let currentMediaIndex = 0;
+        let currentMedia = [];
+
+        // 갤러리 렌더링 함수
+        function renderGallery(media) {
+            galleryContainer.innerHTML = '<div class="gallery-nav"><button id="gallery-prev"><</button><button id="gallery-next">></button></div>';
+            media.forEach((item, index) => {
+                let element;
+                if (item.type === "image") {
+                    element = document.createElement("img");
+                    element.src = item.src;
+                    element.alt = `Project Image ${index + 1}`;
+                } else if (item.type === "video") {
+                    element = document.createElement("video");
+                    const source = document.createElement("source");
+                    source.src = item.src;
+                    source.type = "video/mp4";
+                    element.appendChild(source);
+                    element.controls = true;
+                    element.alt = `Project Video ${index + 1}`;
+                }
+                element.className = "gallery-media";
+                if (index === 0) element.classList.add("active");
+                galleryContainer.insertBefore(element, galleryContainer.querySelector(".gallery-nav"));
+            });
+
+            // 내비게이션 버튼 이벤트 리스너 추가
+            const prevBtn = galleryContainer.querySelector("#gallery-prev");
+            const nextBtn = galleryContainer.querySelector("#gallery-next");
+            prevBtn.addEventListener("click", () => changeMedia(-1));
+            nextBtn.addEventListener("click", () => changeMedia(1));
+        }
+
+        // 미디어 변경 함수
+        function changeMedia(direction) {
+            const mediaElements = galleryContainer.querySelectorAll(".gallery-media");
+            // 현재 미디어 정지 (비디오일 경우)
+            if (currentMedia[currentMediaIndex].type === "video") {
+                mediaElements[currentMediaIndex].pause();
+            }
+            mediaElements[currentMediaIndex].classList.remove("active");
+            currentMediaIndex = (currentMediaIndex + direction + currentMedia.length) % currentMedia.length;
+            mediaElements[currentMediaIndex].classList.add("active");
+        }
+
+        // 프로젝트 항목 클릭 이벤트
+        document.querySelectorAll(".project-item").forEach(item => {
+            item.addEventListener("click", () => {
+                const projectId = item.getAttribute("data-project-id");
+                const project = projectDetails[projectId];
+                if (project) {
+                    modalTitle.textContent = project.title;
+                    modalDescription.textContent = project.description;
+
+                    // 미디어 갤러리 처리
+                    currentMedia = project.media || [];
+                    currentMediaIndex = 0;
+                    if (currentMedia.length > 0) {
+                        renderGallery(currentMedia);
+                        galleryContainer.style.display = "block";
+                    } else {
+                        galleryContainer.style.display = "none";
+                    }
+
+                    modal.style.display = "flex";
+                }
+            });
+        });
+
+        // 모달 닫기
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+            galleryContainer.style.display = "none";
+            // 모든 비디오 정지
+            galleryContainer.querySelectorAll("video").forEach(video => video.pause());
+        });
+
+        // 모달 외부 클릭 시 닫기
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                galleryContainer.style.display = "none";
+                // 모든 비디오 정지
+                galleryContainer.querySelectorAll("video").forEach(video => video.pause());
+            }
+        });
+    // </script>
+    <!-- <section class="Performance">
+	 	<h2>PERFORMANCE</h2>
+	 	<div class = "performance-list">
+	 		 <img >
+	 	</div>
+	 </section> -->
+    </body>
 </html>
