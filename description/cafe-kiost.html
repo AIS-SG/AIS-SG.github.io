@@ -1,0 +1,39 @@
+<h2>RASA를 활용한 Cafe 키오스크 주문 챗봇</h2>
+<p>
+한국 인공지능연구소 OpenLab에서 진행된 프로젝트로, CS224N 강의를 수강하며 배운 NLP 이론을 실제 서비스에 응용해보자는 취지에서 시작되었습니다.
+</p>
+
+<h3>🔍 프로젝트 개요</h3>
+<ul>
+    <li>목표: 카페 주문 시나리오에 기반한 자연어 대화형 키오스크 구축</li>
+    <li>사용 도구: <strong>RASA (NLU + Dialogue Management)</strong></li>
+    <li>데이터셋: AI Hub의 소상공인 카페 대화 데이터 + 자체 재구축 시나리오</li>
+</ul>
+
+<h3>🧠 기술 스택 및 구조</h3>
+<p>
+RASA는 NLU(자연어 이해)와 Core(대화 정책)를 기반으로 구성되며, 본 프로젝트에서는 사용자 발화의 <strong>의도(intent) 및 개체(entity)</strong>를 추출하고 이에 맞는 응답을 제공하는 구조로 설계되었습니다.
+</p>
+<p>
+NLU 파이프라인은 다음과 같이 구성됩니다:
+</p>
+<ul>
+    <li>Tokenizer (문장 분리)</li>
+    <li>Featurizer (벡터화)</li>
+    <li>Intent Classifier & Entity Extractor</li>
+</ul>
+
+<h3>⚠️ 도전 과제 및 해결</h3>
+<ul>
+    <li>📉 한글 형태소 분석 미지원 → <code>KoNLPy</code> 기반 커스텀 토크나이저 개발</li>
+    <li>📦 데이터 부족 → 카페 시나리오 중심으로 데이터 재구성</li>
+</ul>
+
+<h3>📸 주요 화면</h3>
+<p>
+아래는 키오스크 챗봇의 주요 UI 및 대화 흐름을 보여주는 이미지들입니다.
+</p>
+
+<hr/>
+
+<p><em>※ 본 설명은 HTML 파일로 분리되어 외부에서 동적으로 로드됩니다.</em></p>

@@ -108,7 +108,7 @@
                 </ul>
             </section>
             <section>
-                <h2>SKILLS</h2>
+                <h2>INTERESTING SECTION</h2>
                 <ul>
                     <li>Python, C++, JAVA, REACT</li>
                     <li>Acoustic Guitar, Electric Guitar, Bass Guitar, Drum, Piano</li>
@@ -195,8 +195,8 @@
                     <li>23.11.21 밴드 공연(일렉기타, 베이스)</li>
                     <li>24.08.01-02 뮤지컬 갈라콘서트</li>
                     <li>25.01.18 밴드 공연(일렉기타, 베이스, 드럼)</li>
-                    <li>25.중순 창작 뮤지컬 공연(작곡)</li>
-                    <!-- <li>25.07.19 우뺸 공연(베이스)</li> -->
+                    <li>25.07.19 우뺸 공연(베이스)</li>
+                    <li>25.중순 창작 뮤지컬 공연(음악팀: 작곡, 음향)</li>
                 </ul>
                 </div>
             </section>
@@ -228,31 +228,52 @@
         const projectDetails = {
             "cafe-kiost": {
                 title: "RASA를 활용한 Cafe 키오스크 주문 챗봇",
-                description: "RASA 프레임워크를 사용해 카페 키오스크에서 주문을 처리하는 대화형 챗봇을 개발했습니다. 자연어 처리(NLP)를 통해 사용자의 주문을 이해하고 메뉴 추천 기능을 제공합니다."
+                description: "./description/cafe-kiost.html",
+                //  한국 인공지능 연구소에서 OpenLab을 열어서 오픈랩 팀원들과 CS224N 강의를 들으면서, NLP를 응용해보자는 의견이 모아져서 챗봇을 만들게 되었다. <br/> 데이터는 AI Hub에 있는 소상공인 및 공공민원 분야에 대한 대화 데이터를 구축한 한국어 대화 데이터를 이용하기로 했다. 카페에서 일어나는 대화이며 총 7,859건의 데이터를 분석했는데, 데이터가 파편화되어있고, 건수가 너무 적어 카페에서 일어나는 보편적인 시나리오를 만들어 데이터를 재구축하였습니다. <br/> Chatbot을 만들기 위해 다양한 프레임워크를 찾던 중 Rasa opensource Rasa 오픈 소스 아키텍처의 개요를 제공합니다. <br/> 두 가지 주요 구성 요소는 자연어 이해(NLU)와 dialog management입니다. <br/> NLU는 의도 분류, 엔티티 추출 및 응답 검색을 처리하는 부분입니다. 학습 된 파이프 라인에서 생성 된 NLU 모델을 사용하여 사용자 발화를 처리하기 때문에 아래에 NLU 파이프 라인으로 표시됩니다. <br/> 대화 관리 구성 요소는 컨텍스트를 기반으로 대화에서 다음 작업을 결정합니다. 이것은 다이어그램에서 Dialogue Policies로 표시됩니다.<br/><br/>의도(intent)와 개체(entity)를 기반으로 작동하는 RASA 프레임워크 사용하였습니다.<br/><br/>RASA의 가장 큰 특징은 머신러닝을 사용한다는 점입니다. 그리고, RASA는 문장을 벡터로 변환하고 학습을 통해 처리합니다.<br/> 전체 구조는 크게 NLU와 Core로 나누어집니다. NLU는 자연어처리를 담당하고, Core는 스크립트를 작성하여 대화를 관리합니다. 특히 NLU 부분이 확장성도 높고 상당히 뛰어납니다. 기본적으로 문장을 단어로 분리하는 토크나이저, 토큰을 모아 입력 벡터로 만드는 피처라이저, 분류기, 개체명인식기 등의 컴포넌트로 이루어져 있습니다. 이들 컴포넌트들을 조합하여 파이프라인을 만드는 방식입니다. <br/>RASA의 단점으로는 우선 한글 지원이 안된다는 것입니다. 한글 형태소분석이 되는 토크나이저를 커스텀으로 추가해야 합니다. 
+                media : [{type:"image",src:"./images/cafe-kiost/cafe0.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe1.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe2.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe3.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe4.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe5.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe6.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe7.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe8.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe9.png"},
+                        {type:"image",src:"./images/cafe-kiost/cafe10.png"},
+                ] 
+
+
             },
             "handwriting": {
                 title: "오프라인 한글 손글씨 인식",
-                description: "오프라인 환경에서 한글 손글씨를 인식하는 알고리즘을 개발했습니다. 이미지 전처리 기법과 CNN 모델을 활용하여 높은 정확도를 달성했으며, KIIT 학술대회에서 우수논문상을 수상했습니다."
+                description: "./description/handwriting.html"
+                // "오프라인 환경에서 한글 손글씨를 인식하는 알고리즘을 개발했습니다. 이미지 전처리 기법과 CNN 모델을 활용하여 높은 정확도를 달성했으며, KIIT 학술대회에서 우수논문상을 수상했습니다."
             },
             "dust-sensor": {
                 title: "라즈베리파이/아두이노를 이용한 미세먼지 센서",
-                description: "라즈베리파이와 아두이노를 활용해 실시간 미세먼지 농도를 측정하는 센서를 제작했습니다. 데이터를 시각화하여 사용자에게 미세먼지 정보를 직관적으로 제공합니다."
+                description: "./description/dust-sensor.html"
+                // "라즈베리파이와 아두이노를 활용해 실시간 미세먼지 농도를 측정하는 센서를 제작했습니다. 데이터를 시각화하여 사용자에게 미세먼지 정보를 직관적으로 제공합니다."
             },
             "dalle-safety": {
                 title: "DallE를 이용한 아동 안전 교육을 위한 이미지 생성 사이트",
-                description: "Dall-E API를 활용하여 아동 안전 교육용 이미지를 생성하는 웹사이트를 개발했습니다. React로 프론트엔드를 구성하고, 안전 교육 시나리오에 맞는 이미지를 동적으로 생성합니다."
+                description: "./description/dalle-safety.html"
+                // "Dall-E API를 활용하여 아동 안전 교육용 이미지를 생성하는 웹사이트를 개발했습니다. React로 프론트엔드를 구성하고, 안전 교육 시나리오에 맞는 이미지를 동적으로 생성합니다."
             },
             "omr-preprocessing": {
                 title: "경량화 OMR 전처리 알고리즘 프로젝트",
-                description: "악보를 디지털 데이터로 변환하는 광학 음악 인식(OMR) 시스템의 전처리 알고리즘을 개발했습니다. 경량화된 알고리즘으로 처리 속도를 개선했으며, KIIT 2024 추계학술대회에서 우수논문상을 수상했습니다."
+                description: "./description/omr-preprocessing.html"
+                // "악보를 디지털 데이터로 변환하는 광학 음악 인식(OMR) 시스템의 전처리 알고리즘을 개발했습니다. 경량화된 알고리즘으로 처리 속도를 개선했으며, KIIT 2024 추계학술대회에서 우수논문상을 수상했습니다."
             },
             "music-analysis": {
                 title: "음원파일 코드와 멜로디 박자 분석 프로젝트 (진행중)",
-                description: "음원 파일에서 코드 진행과 멜로디, 박자를 분석하는 프로젝트입니다. Python과 Librosa 라이브러리를 사용해 음원 데이터를 분석하며, 음악 이론을 적용해 자동 분석 시스템을 구축 중입니다."
+                description: "./description/music-analysis.html"
+                // "음원 파일에서 코드 진행과 멜로디, 박자를 분석하는 프로젝트입니다. Python과 Librosa 라이브러리를 사용해 음원 데이터를 분석하며, 음악 이론을 적용해 자동 분석 시스템을 구축 중입니다."
             },
             "music-ai": {
                 title: "Llama와 RAG기법을 이용한 음악 작곡 AI (진행중)",
-                description: "Llama 모델과 RAG(Retrieval-Augmented Generation) 기법을 활용해 음악 작곡 AI를 개발 중입니다. 사용자의 입력(예: 장르, 분위기)에 맞춰 악보와 멜로디를 생성하는 것을 목표로 합니다."
+                description: "./music-ai.html"
+                // "Llama 모델과 RAG(Retrieval-Augmented Generation) 기법을 활용해 음악 작곡 AI를 개발 중입니다. 사용자의 입력(예: 장르, 분위기)에 맞춰 악보와 멜로디를 생성하는 것을 목표로 합니다."
             }
         };
 
@@ -310,6 +331,22 @@
             mediaElements[currentMediaIndex].classList.add("active");
         }
 
+        function loadDescriptionFromPath(descriptionPath, callback) {
+            fetch(descriptionPath)
+                .then(res => {
+                    if (!res.ok) throw new Error("파일을 불러올 수 없습니다");
+                    return res.text();
+                })
+                .then(html => {
+                    callback(html);
+                })
+                .catch(err => {
+                    console.error(err);
+                    callback("<p>설명 파일을 불러오는 데 실패했습니다.</p>");
+                });
+        }
+
+
         // 프로젝트 항목 클릭 이벤트
         document.querySelectorAll(".project-item").forEach(item => {
             item.addEventListener("click", () => {
@@ -317,8 +354,12 @@
                 const project = projectDetails[projectId];
                 if (project) {
                     modalTitle.textContent = project.title;
-                    modalDescription.textContent = project.description;
-
+                    // modalDescription.textContent = project.description;
+                    // modalDescription.innerHTML = project.description;
+                    // description은 HTML 파일 경로로 간주
+                    loadDescriptionFromPath(project.description, (html) => {
+                        modalDescription.innerHTML = html;
+                    });
                     // 미디어 갤러리 처리
                     currentMedia = project.media || [];
                     currentMediaIndex = 0;
@@ -337,6 +378,7 @@
         // 모달 닫기
         closeModal.addEventListener("click", () => {
             modal.style.display = "none";
+            modalDescription.innerHTML = "";
             galleryContainer.style.display = "none";
             // 모든 비디오 정지
             galleryContainer.querySelectorAll("video").forEach(video => video.pause());
@@ -346,6 +388,7 @@
         window.addEventListener("click", (event) => {
             if (event.target === modal) {
                 modal.style.display = "none";
+                modalDescription.innerHTML = "";
                 galleryContainer.style.display = "none";
                 // 모든 비디오 정지
                 galleryContainer.querySelectorAll("video").forEach(video => video.pause());
