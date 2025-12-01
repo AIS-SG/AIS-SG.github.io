@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <script src="https://kit.fontawesome.com/a9a68f8b3f.js" crossorigin="anonymous"></script>
@@ -43,6 +43,20 @@
         }
         .project-item:hover {
             color: #007bff;
+        }
+        .prject-title{
+            font-weight: bold;
+            color: #333;
+            display: block;
+        }
+        .project-item:hover .project-title{
+            color: #007bff;
+        }
+        .project-desc{
+            font-size: 0.85em;
+            color: #666;
+            margin: 2px 0 0 0;
+            display: block;
         }
         .gallery-container {
             position: relative;
@@ -90,7 +104,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to my HOME.</h1>
+        <h1>Welcome to my CV.</h1>
         <p>Undergraduate Researcher at DI LAB</p> 
         <hr>
     </header>
@@ -234,11 +248,26 @@
 
                 <h3 style="font-size: 1.2em; border-left: 4px solid #333; padding-left: 10px; margin: 30px 0 10px 0;">💻 Web & Applications</h3>
                 <ul class="project-list">
-                    <li class="project-item" data-project-id="book-app">React-native 기반 도서 추천 앱</li>
-                    <li class="project-item" data-project-id="photo-booth">React 기반 인생네컷 부스 웹</li>
-                    <li class="project-item" data-project-id="food-waste-web">React 기반 Food-Waste Zero Map</li>
-                    <li class="project-item" data-project-id="bob-ple">React 기반 식사 친구 매칭 웹 '밥플'</li>
-                    <li class="project-item" data-project-id="dalle-safety">Dall-E 활용 아동 안전 교육 이미지 생성 웹</li>
+                    <li class="project-item" data-project-id="book-app">
+                        <span class="project-title">React-native 기반 도서 추천 앱</span>
+                        <span class="project-desc">도서 추천 AI 모델을 이용한 크로스 플랫폼 모바일 어플리케이션</span>
+                    </li>
+                    <li class="project-item" data-project-id="photo-booth">
+                        <span class="project-title">React 기반 인생네컷 부스 웹</span>
+                        <span class="project-desc">DSLR 카메라 연동 및 포토 프린터를 통한 웹 기반 포토 부스 구현</span>
+                    </li>
+                    <li class="project-item" data-project-id="food-waste-web">
+                        <span class="project-title">React 기반 Food-Waste Zero Map</span>
+                        <span class="project-desc">잔반 인식 AI 모델을 활용한 잔반 리뷰 음식점 지도 앱 서비스</span>
+                    </li>
+                    <li class="project-item" data-project-id="bob-ple">
+                        <span class="project-title">React 기반 식사 친구 매칭 웹 '밥플'</span>
+                        <span class="project-desc">사용자 위치 및 취향 기반 실시간 매칭 웹 서비스</span>
+                    </li>
+                    <li class="project-item" data-project-id="dalle-safety">
+                        <span class="project-title">Dall-E 활용 아동 안전 교육 이미지 생성 웹</span>
+                        <span class="project-desc"OpenAI DALL-E AP를 활용한 교육용 상황별 이미지 생성 도구></span>
+                    </li>
                     <li class="project-item" data-project-id="cafe-kiost">RASA 활용 Cafe 키오스크 주문 챗봇</li>
                     <li class="project-item" data-project-id="dust-sensor">RPi/Arduino 미세먼지 센서 (IoT)</li>
                 </ul>
