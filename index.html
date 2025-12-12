@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seounggi Seo - Portfolio</title>
+    <title>My Portfolio</title>
     <script src="https://kit.fontawesome.com/a9a68f8b3f.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
@@ -44,11 +44,25 @@
         .project-item:hover {
             color: #007bff;
         }
+        .prject-title{
+            font-weight: bold;
+            color: #333;
+            display: block;
+        }
+        .project-item:hover .project-title{
+            color: #007bff;
+        }
+        .project-desc{
+            font-size: 0.85em;
+            color: #666;
+            margin: 2px 0 0 0;
+            display: block;
+        }
         .gallery-container {
             position: relative;
             margin-bottom: 15px;
             max-width: 100%;
-            height: 200px; /* 갤러리 높이 고정 */
+            height: 200px; /* Fixed gallery height */
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -56,10 +70,10 @@
         }
         .gallery-media {
             max-width: 100%;
-            max-height: 200px; /* 이미지와 비디오의 최대 높이 동일 */
+            max-height: 200px; /* Maximum height same for images and videos */
             width: 100%;
             height: 100%;
-            object-fit: contain; /* 비율 유지 */
+            object-fit: contain; /* Maintain aspect ratio */
             display: none;
             border-radius: 5px;
         }
@@ -90,138 +104,194 @@
 </head>
 <body>
     <header>
-        <h1>Welcome, I'm Seounggi Seo</h1>
+        <h1>Welcome to my CV.</h1>
         <p>Undergraduate Researcher at DI LAB</p> 
         <hr>
     </header>
 
     <main>
-        <aside>
-			<img src="./profile.JPG" alt="Profile Photo" class="profile-photo">
+       <aside>
+            <img src="./profile.JPG" alt="Profile Photo" class="profile-photo">
             <section>
                 <h2>CONTACT</h2>
                 <ul>
                     <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:dracus0207@gmail.com">dracus0207@gmail.com</a></li>
                     <li><i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/AIS-SG">Github</a></li>
-                    <li><i class="fa fa-paper" aria-hidden="true"></i> <a href="https://www.dbpia.co.kr/author/authorDetail?ancId=5404852">DBpia</a></li>
+                    <li><i class="fa fa-book" aria-hidden="true"></i> <a href="https://www.dbpia.co.kr/author/authorDetail?ancId=5404852">DBpia</a></li>
                 </ul>
             </section>
+
             <section>
-                <h2>INTERESTING SECTION</h2>
+                <h2>RESEARCH INTERESTS</h2>
                 <ul>
-                    <li>Music-AI, Light-Weight AI, MIR, OMR, Audio-Source-Seperation</li>
-                    <li>Acoustic Guitar, Electric Guitar, Bass Guitar, Drum, Piano, Song write</li>
+                    <li>Music AI & MIR</li>
+                    <li>LLM Applications</li>
+                    <li>Light-Weight AI</li>
+                    <li>OMR (Optical Music Recognition)</li>
+                    <li>Audio Source Separation</li>
                 </ul>
             </section>
+
+            <section>
+                <h2>TECHNICAL SKILLS</h2>
+                
+                <h4 style="font-size: 1.1em; margin: 15px 0 5px 0; color: #333; border-bottom: 1px solid #ddd;">AI & ML</h4>
+                <ul style="margin-top: 5px;">
+                    <li>Python</li>
+                    <li>LLM (RAG, Fine-tuning)</li>
+                    <li>LangChain, LangGraph</li>
+                    <li>Chroma (Vector DB)</li>
+                </ul>
+
+                <h4 style="font-size: 1.1em; margin: 15px 0 5px 0; color: #333; border-bottom: 1px solid #ddd;">Data & Processing</h4>
+                <ul style="margin-top: 5px;">
+                    <li>Pandas, NumPy</li>
+                    <li>Web Crawling (Selenium)</li>
+                    <li>Data Preprocessing</li>
+                </ul>
+
+                <h4 style="font-size: 1.1em; margin: 15px 0 5px 0; color: #333; border-bottom: 1px solid #ddd;">Dev & Tools</h4>
+                <ul style="margin-top: 5px;">
+                    <li>JavaScript, SQL</li>
+                    <li>React, React-native, Node.js (Basic)</li>
+                    <li>Git</li>
+                </ul>
+            </section>
+
             <section>
                 <h2>EDUCATION</h2>
                 <ul>
-                    <li>Guri high school (2019 - 2021)</li>
-                    <li>Seokyeong Univ. - Department of Software Engineering (2022 - Current)</li>
+                    <li><strong>Seokyeong Univ.</strong><br>Dept. of Software Engineering<br>(2022 - Current)</li>
+                    <li>Guri high school<br>(2019 - 2021)</li>
                 </ul>
             </section>
-			<section>
-				<h2>Researcher Experiences</h2>
-				<ul>
-					<li>사단법인 한국인공지능연구소 오픈랩 7기 (2020) </li>
-					<li>Seokyeong Univ. DI LAB under the supervision of Prof.Sungsuk Kim (2023-current)</li>
-				</ul>
-			</section>
+
+            <section>
+                <h2>EXPERIENCE</h2>
+                <ul>
+                    <li>
+                        <strong>Undergraduate Researcher</strong><br>
+                        Seokyeong Univ. DI LAB<br>
+                        <span style="font-size: 0.9em; color: #666;">(2023 - Current)</span>
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <strong>Open Lab 7th Researcher</strong><br>
+                        Korea AI Laboratory<br>
+                        <span style="font-size: 0.9em; color: #666;">(2020)</span>
+                    </li>
+                </ul>
+            </section>
         </aside>
         <article>
             <section>
                 <h2>ABOUT ME</h2>
-                <p>I am a passionate individual who loves music and technology. I can play various instruments and have composed music. My journey with artificial intelligence began in high school, where I worked on projects like cell classification using a Raspberry Pi and developing a cafe kiosk chatbot.</p>
-                <p>As an undergraduate researcher, I have focused on lightweight handwriting recognition and optical music recognition (OMR), contributing to several publications. My goal is to combine my love for music and AI to create innovative solutions.</p>
-				<p>I am studying music beat, melody analysis, and chord analysis, and I am studying LLM Fine Tuning and RAG. So I am researching to develop a composition AI through LLM Fine Tuning or RAG.</p>
+                <p>
+                    Standing at the intersection of <strong>Art and Engineering</strong>, I am a researcher dedicated to advancing <strong>Music AI</strong>. 
+                    With a solid foundation in software engineering and extensive experience as a performing musician, I aim to apply <strong>Evolutionary Algorithms</strong> to enhance the creativity and accuracy of AI models.
+                </p>
+                <p>
+                    My research career started with practical projects using Raspberry Pi and Chatbots, and has evolved into specialized academic research on <strong>Optical Music Recognition (OMR)</strong> and <strong>Light-weight Deep Learning</strong>, contributing to several publications.
+                </p>
+                <p>
+                    Currently, I am seeking to overcome the structural limitations of probabilistic models (LLMs). My ultimate goal is to leverage <strong>Meta-Evolutionary Machine Intelligence</strong> to build an innovative system that not only generates music but understands and optimizes it like a human composer.
+                </p>
             </section>
+
             <section>
                 <h2>PUBLICATIONS</h2>
                 <ul>
-					<li>
+                    <li>
                         <strong class="publication-title">Preprocessing algorithm for offline Hangul-handwritten recognition</strong><br>
-                        <span class="authors">Soyeon Lee, Seunggi Seo, Sun Ok Yang, Sungsuk Kim</span><br>
+                        <span class="authors">Soyeon Lee, <strong>Seunggi Seo</strong>, Sun Ok Yang, Sungsuk Kim</span><br>
                         <span class="publication-info">The Proceedings of the 2023 KIIT Summer Conference</span>
                     </li>
-					<li>
+                    <li>
                         <strong class="publication-title">Preprocessing algorithm for light-weight Korean handwriting characters recognition</strong><br>
-                        <span class="authors">Seunggi Seo, Dongok Yu, Sungsuk Kim, Sun Ok Yang</span><br>
+                        <span class="authors"><strong>Seunggi Seo</strong>, Dongok Yu, Sungsuk Kim, Sun Ok Yang</span><br>
                         <span class="publication-info">The Proceedings of the 2023 KIIT Autumn Conference</span>
                     </li>
                     <li>
                         <strong class="publication-title">Preprocessing algorithms for Optical Music Recognition (OMR)</strong><br>
-                        <span class="authors">Seunggi Seo, Sungsuk Kim, Jaehyun Kim</span><br>
+                        <span class="authors"><strong>Seunggi Seo</strong>, Sungsuk Kim, Jaehyun Kim</span><br>
                         <span class="publication-info">The Proceedings of the 2024 KIIT Autumn Conference</span>
+                    </li>
+                    <li>
+                        <strong class="publication-title">Music Generation algorithm using Vector database and Chord normalization</strong><br>
+                        <span class="authors"><strong>Seunggi Seo</strong>, Sungsuk Kim, Jaehyun Kim</span><br>
+                        <span class="publication-info">The Proceedings of the 2025 KIIT Autumn Conference</span>
                     </li>
                 </ul>
             </section>
+
             <section>
                 <h2>AWARDS</h2>
                 <ul>
-                    <li>KIIT 2023 추계학술대회 우수논문상 은상</li>
-                    <ol>
-                        <ul>Preprocessing algorithm for light-weight Korean handwriting characters recognition</ul>
-                    <br/>
-                    </ol>
-                    <li>KIIT 2024 추계학술대회 우수논문상 은상</li>
-                    <ol>
-                        <ul>Preprocessing algorithms for Optical Music Recognition (OMR)</ul>
-                    </ol>
+                    <li style="margin-bottom: 15px;">
+                        <strong>Excellent Paper Award (Silver)</strong> - KIIT 2023 Autumn<br>
+                        <span style="font-size: 0.9em; color: #555;">Paper: Preprocessing algorithm for light-weight Korean handwriting characters recognition</span>
+                    </li>
+                    <li>
+                        <strong>Excellent Paper Award (Silver)</strong> - KIIT 2024 Autumn<br>
+                        <span style="font-size: 0.9em; color: #555;">Paper: Preprocessing algorithms for Optical Music Recognition (OMR)</span>
+                    </li>
                 </ul>
             </section>
-			<section>
-				<h2>PROJECTS</h2>
-				<ul id = "project-list">
-                    <li class="project-item" data-project-id="cafe-kiost">RASA를 활용한 Cafe 키오스크 주문 챗봇</li>
-                    <!-- <li class="project-item" data-project-id="gocart">고카트 제작</li>
-                    <li class="project-item" data-project-id="smart-mirror">smart mirror 제작</li> -->
-                    <!-- <li class="project-item" data-project-id="chess-ai">Chess Game AI</li> -->
-                    <li class="project-item" data-project-id="handwriting">오프라인 한글 손글씨 인식</li>
-                    <li class="project-item" data-project-id="dust-sensor">라즈베리파이/아두이노를 이용한 미세먼지 센서</li>
-                    <li class="project-item" data-project-id="dalle-safety">Dall-E를 이용한 아동 안전 교육을 위한 이미지 생성 사이트</li>
-                    <li class="project-item" data-project-id="omr-preprocessing">경량화 OMR 전처리 알고리즘 프로젝트</li>
-                    <li class="project-item" data-project-id="music-analysis">음원파일 코드와 멜로디 박자 분석 프로젝트</li>
-                    <li class="project-item" data-project-id="music-ai">LLM 모델과 RAG기법을 이용한 음악 작곡 AI</li>
-                    <li class="project-item" data-project-id="photo-booth">React기반 인생네컷 부스 웹 제작</li>
-                    <li class="project-item" data-project-id="food-waste-ai">멀티모달 LLM과 객체 인식(NER)을 활용한 잔반 인식 모델 개발</li>
-                    <li class="project-item" data-project-id="food-waste-web">React기반 Food-Waste Zero Map 개발</li>
-                    <li class="project-item" data-project-id="bob-ple">Reac기반 밥, 프로젝트 친구 매칭 웹 개발</li>
-                    <li class="project-item" data-project-id="book-ai">RAFT기법을 활용한 도서 추천 LLM 모델 개발</li>
-                    <li class="project-item" data-project-id="book-app">React-native기반 도서 추천 앱 개발</li>
-				</ul>
-			</section>
-            <section class="Performance">
-                <h2>PERFORMANCE</h2>
-                <div class = "performance-list">
-                    <ul>
-                    <li>22.05.29 어쿠스틱 밴드 공연(기타, 카혼)</li>
-                    <li>22.12.03 어쿠스틱 밴드 공연(기타, 카혼, 베이스)</li>
-                    <li>23.02.04-05 뮤지컬 갈라콘서트</li>
-                    <li>23.11.21 밴드 공연(일렉기타, 베이스)</li>
-                    <li>24.08.01-02 뮤지컬 갈라콘서트</li>
-                    <li>25.01.18 밴드 공연(일렉기타, 베이스, 드럼)</li>
-                    <li>25.07.19 우뺸 공연(베이스)</li>
-                    <li>25.08.09 창작 뮤지컬 공연(음악팀: 작곡, 음향)</li>
+
+            <section>
+                <h2>PROJECTS</h2>
+                
+                <h3 style="font-size: 1.2em; border-left: 4px solid #333; padding-left: 10px; margin: 20px 0 10px 0;">🎵 AI & Research</h3>
+                <ul class="project-list">
+                    <li class="project-item" data-project-id="music-ai">
+                        <span class="project-title"><strong>[LLM/RAG]</strong> Music Composition and Generation AI (Paper)</span>
+                        <span class="project-desc">Developing a RAG-based music composition model using relative pitch-based root note normalization vector DB</span>
+                    </li>
+                    <li class="project-item" data-project-id="book-ai">
+                        <span class="project-title"><strong>[LLM/RAFT/AGENT]</strong> Book Recommendation Model Development</span>
+                        <span class="project-desc">Developing a RAG-based personalized book recommendation agent through book information and review vector DB</span>
+                    </li>
+                    <li class="project-item" data-project-id="music-analysis"><strong>[MIR]</strong> Audio File Chord/Melody/Rhythm Analysis</li>
+                    <li class="project-item" data-project-id="omr-preprocessing"><strong>[CV]</strong> Light-weight OMR Preprocessing Algorithm (Paper)</li>
+                    <li class="project-item" data-project-id="handwriting"><strong>[CV]</strong> Offline Hangul Handwriting Recognition (Paper)</li>
+                    <li class="project-item" data-project-id="food-waste-ai"><strong>[Multimodal]</strong> Food Waste Recognition Model (NER Application)</li>
                 </ul>
-                </div>
+
+                <h3 style="font-size: 1.2em; border-left: 4px solid #333; padding-left: 10px; margin: 30px 0 10px 0;">💻 Web & Applications</h3>
+                <ul class="project-list">
+                    <li class="project-item" data-project-id="book-app">
+                        <span class="project-title">React-native Book Recommendation App</span>
+                        <span class="project-desc">Cross-platform mobile application using book recommendation AI model</span>
+                    </li>
+                    <li class="project-item" data-project-id="photo-booth">
+                        <span class="project-title">React-based Photo Booth Web</span>
+                        <span class="project-desc">Web-based photo booth implementation with DSLR camera integration and photo printer</span>
+                    </li>
+                    <li class="project-item" data-project-id="food-waste-web">
+                        <span class="project-title">React-based Food-Waste Zero Map</span>
+                        <span class="project-desc">Restaurant map service app using food waste recognition AI model with reviews</span>
+                    </li>
+                    <li class="project-item" data-project-id="bob-ple">
+                        <span class="project-title">React-based Meal Friend Matching Web 'BobPle'</span>
+                        <span class="project-desc">Real-time matching web service based on user location and preferences</span>
+                    </li>
+                    <li class="project-item" data-project-id="dalle-safety">
+                        <span class="project-title">Dall-E Child Safety Education Image Generation Web</span>
+                        <span class="project-desc">Educational situation-specific image generation tool using OpenAI DALL-E API</span>
+                    </li>
+                    <li class="project-item" data-project-id="cafe-kiost">RASA-based Cafe Kiosk Order Chatbot</li>
+                    <li class="project-item" data-project-id="dust-sensor">RPi/Arduino Fine Dust Sensor (IoT)</li>
+                </ul>
             </section>
         </article>
     </main>
-	<section class ='gallery'>
-		<h2>GALLERY</h2>
-		<div class = "gallery-images">
-			<img src="electric.JPG" alt="Gallery Photo 1">
-			<img src="bass.jpg" alt="Gallery Photo 2">
-			<img src="drum.jpg" alt="Gallery Photo 3">
-		</div>
-	</section>
+	
     <div class="modal" id = "project-modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
             <h3 id="modal-title"></h3>
             <p id="modal-description"></p>
             <div class="gallery-container" id="gallery-container">
-                <!-- 이미지는 JavaScript에서 동적으로 추가 -->
+                <!-- Images will be dynamically added by JavaScript -->
                 <div class="gallery-nav">
                     <button id="gallery-prev">&lt;</button>
                     <button id="gallery-next">&gt;</button>
@@ -229,10 +299,10 @@
             </div>
     </div>
     <script>
-        // 프로젝트 설명 데이터
+        // Project description data
         const projectDetails = {
             "cafe-kiost": {
-                title: "RASA를 활용한 Cafe 키오스크 주문 챗봇",
+                title: "RASA-based Cafe Kiosk Order Chatbot",
                 description: "./description/cafe-kiost.html",
                 //  한국 인공지능 연구소에서 OpenLab을 열어서 오픈랩 팀원들과 CS224N 강의를 들으면서, NLP를 응용해보자는 의견이 모아져서 챗봇을 만들게 되었다. <br/> 데이터는 AI Hub에 있는 소상공인 및 공공민원 분야에 대한 대화 데이터를 구축한 한국어 대화 데이터를 이용하기로 했다. 카페에서 일어나는 대화이며 총 7,859건의 데이터를 분석했는데, 데이터가 파편화되어있고, 건수가 너무 적어 카페에서 일어나는 보편적인 시나리오를 만들어 데이터를 재구축하였습니다. <br/> Chatbot을 만들기 위해 다양한 프레임워크를 찾던 중 Rasa opensource Rasa 오픈 소스 아키텍처의 개요를 제공합니다. <br/> 두 가지 주요 구성 요소는 자연어 이해(NLU)와 dialog management입니다. <br/> NLU는 의도 분류, 엔티티 추출 및 응답 검색을 처리하는 부분입니다. 학습 된 파이프 라인에서 생성 된 NLU 모델을 사용하여 사용자 발화를 처리하기 때문에 아래에 NLU 파이프 라인으로 표시됩니다. <br/> 대화 관리 구성 요소는 컨텍스트를 기반으로 대화에서 다음 작업을 결정합니다. 이것은 다이어그램에서 Dialogue Policies로 표시됩니다.<br/><br/>의도(intent)와 개체(entity)를 기반으로 작동하는 RASA 프레임워크 사용하였습니다.<br/><br/>RASA의 가장 큰 특징은 머신러닝을 사용한다는 점입니다. 그리고, RASA는 문장을 벡터로 변환하고 학습을 통해 처리합니다.<br/> 전체 구조는 크게 NLU와 Core로 나누어집니다. NLU는 자연어처리를 담당하고, Core는 스크립트를 작성하여 대화를 관리합니다. 특히 NLU 부분이 확장성도 높고 상당히 뛰어납니다. 기본적으로 문장을 단어로 분리하는 토크나이저, 토큰을 모아 입력 벡터로 만드는 피처라이저, 분류기, 개체명인식기 등의 컴포넌트로 이루어져 있습니다. 이들 컴포넌트들을 조합하여 파이프라인을 만드는 방식입니다. <br/>RASA의 단점으로는 우선 한글 지원이 안된다는 것입니다. 한글 형태소분석이 되는 토크나이저를 커스텀으로 추가해야 합니다. 
                 media : [{type:"image",src:"./images/cafe-kiost/cafe0.png"},
@@ -251,9 +321,9 @@
 
             },
             "handwriting": {
-                title: "오프라인 한글 손글씨 인식",
+                title: "Offline Hangul Handwriting Recognition",
                 description: "./description/handwriting.html",
-                // "오프라인 환경에서 한글 손글씨를 인식하는 알고리즘을 개발했습니다. 이미지 전처리 기법과 CNN 모델을 활용하여 높은 정확도를 달성했으며, KIIT 학술대회에서 우수논문상을 수상했습니다."
+                // "Developed an algorithm for recognizing offline Hangul handwriting. Achieved high accuracy using image preprocessing techniques and CNN models, and won an excellent paper award at the KIIT academic conference."
                 media : [{type:"image",src:"./images/handwriting/handwriting2.png"},
                         {type:"image",src:"./images/handwriting/handwriting3.png"},
                         {type:"image",src:"./images/handwriting/handwriting1.png"},
@@ -261,9 +331,9 @@
                 ]
             },
             "dust-sensor": {
-                title: "라즈베리파이/아두이노를 이용한 미세먼지 센서",
+                title: "Fine Dust Sensor using Raspberry Pi/Arduino",
                 description: "./description/dust-sensor.html",
-                // "라즈베리파이와 아두이노를 활용해 실시간 미세먼지 농도를 측정하는 센서를 제작했습니다. 데이터를 시각화하여 사용자에게 미세먼지 정보를 직관적으로 제공합니다."
+                // "Developed a sensor using Raspberry Pi and Arduino to measure real-time fine dust concentration. Data visualization provides users with intuitive fine dust information."
                 media : [{type:"image",src:"./images/dust-sensor/dust-sensor0.jpg"},
                         {type:"image",src:"./images/dust-sensor/dust-sensor1.jpg"},
                         {type:"image",src:"./images/dust-sensor/dust-sensor2.jpg"},
@@ -277,12 +347,12 @@
                 ] 
             },
             "dalle-safety": {
-                title: "DallE를 이용한 아동 안전 교육을 위한 이미지 생성 사이트",
+                title: "Dall-E Child Safety Education Image Generation Website",
                 description: "./description/dalle-safety.html"
-                // 수정중
+                // In progress
             },
             "omr-preprocessing": {
-                title: "경량화 OMR 전처리 알고리즘 프로젝트",
+                title: "Light-weight OMR Preprocessing Algorithm Project",
                 description: "./description/omr-preprocessing.html",
                 media : [{type:"image",src:"./images/omr-preprocessing/omr-preprocessing0.png"},
                         {type:"image",src:"./images/omr-preprocessing/omr-preprocessing1.png"},
@@ -290,21 +360,21 @@
                         {type:"image",src:"./images/omr-preprocessing/omr-preprocessing3.png"},
                         {type:"image",src:"./images/omr-preprocessing/omr-preprocessing4.png"}
                 ]
-                // "악보를 디지털 데이터로 변환하는 광학 음악 인식(OMR) 시스템의 전처리 알고리즘을 개발했습니다. 경량화된 알고리즘으로 처리 속도를 개선했으며, KIIT 2024 추계학술대회에서 우수논문상을 수상했습니다."
+                // "Developed preprocessing algorithms for Optical Music Recognition (OMR) system that converts sheet music to digital data. Improved processing speed with lightweight algorithms and won an excellent paper award at KIIT 2024 Autumn Conference."
             },
             "music-analysis": {
-                title: "음원파일 코드와 멜로디 박자 분석 프로젝트 (진행중)",
+                title: "Audio File Chord, Melody, and Rhythm Analysis Project (In Progress)",
                 description: "./description/music-analysis.html"
-                // "음원 파일에서 코드 진행과 멜로디, 박자를 분석하는 프로젝트입니다. Python과 Librosa 라이브러리를 사용해 음원 데이터를 분석하며, 음악 이론을 적용해 자동 분석 시스템을 구축 중입니다."
+                // "Project analyzing chord progression, melody, and rhythm from audio files. Using Python and Librosa library to analyze audio data and building an automated analysis system by applying music theory."
             },
             "music-ai": {
-                title: "Llama와 RAG기법을 이용한 음악 작곡 AI (진행중)",
+                title: "Music Composition AI using Llama and RAG Technique (In Progress)",
                 description: "./music-ai.html"
-                // "Llama 모델과 RAG(Retrieval-Augmented Generation) 기법을 활용해 음악 작곡 AI를 개발 중입니다. 사용자의 입력(예: 장르, 분위기)에 맞춰 악보와 멜로디를 생성하는 것을 목표로 합니다."
+                // "Developing music composition AI using Llama model and RAG (Retrieval-Augmented Generation) technique. The goal is to generate sheet music and melodies tailored to user input (e.g., genre, mood)."
             }
         };
 
-        // 모달 요소
+        // Modal elements
         const modal = document.getElementById("project-modal");
         const modalTitle = document.getElementById("modal-title");
         const galleryContainer = document.getElementById("gallery-container");
@@ -316,7 +386,7 @@
         let currentMediaIndex = 0;
         let currentMedia = [];
 
-        // 갤러리 렌더링 함수
+        // Gallery rendering function
         function renderGallery(media) {
             galleryContainer.innerHTML = '<div class="gallery-nav"><button id="gallery-prev"><</button><button id="gallery-next">></button></div>';
             media.forEach((item, index) => {
@@ -339,17 +409,17 @@
                 galleryContainer.insertBefore(element, galleryContainer.querySelector(".gallery-nav"));
             });
 
-            // 내비게이션 버튼 이벤트 리스너 추가
+            // Add event listeners to navigation buttons
             const prevBtn = galleryContainer.querySelector("#gallery-prev");
             const nextBtn = galleryContainer.querySelector("#gallery-next");
             prevBtn.addEventListener("click", () => changeMedia(-1));
             nextBtn.addEventListener("click", () => changeMedia(1));
         }
 
-        // 미디어 변경 함수
+        // Media change function
         function changeMedia(direction) {
             const mediaElements = galleryContainer.querySelectorAll(".gallery-media");
-            // 현재 미디어 정지 (비디오일 경우)
+            // Stop current media (if video)
             if (currentMedia[currentMediaIndex].type === "video") {
                 mediaElements[currentMediaIndex].pause();
             }
@@ -361,7 +431,7 @@
         function loadDescriptionFromPath(descriptionPath, callback) {
             fetch(descriptionPath)
                 .then(res => {
-                    if (!res.ok) throw new Error("파일을 불러올 수 없습니다");
+                    if (!res.ok) throw new Error("Failed to load file");
                     return res.text();
                 })
                 .then(html => {
@@ -369,12 +439,12 @@
                 })
                 .catch(err => {
                     console.error(err);
-                    callback("<p>설명 파일을 불러오는 데 실패했습니다.</p>");
+                    callback("<p>Failed to load description file.</p>");
                 });
         }
 
 
-        // 프로젝트 항목 클릭 이벤트
+        // Project item click event
         document.querySelectorAll(".project-item").forEach(item => {
             item.addEventListener("click", () => {
                 const projectId = item.getAttribute("data-project-id");
@@ -383,11 +453,11 @@
                     modalTitle.textContent = project.title;
                     // modalDescription.textContent = project.description;
                     // modalDescription.innerHTML = project.description;
-                    // description은 HTML 파일 경로로 간주
+                    // Description is treated as HTML file path
                     loadDescriptionFromPath(project.description, (html) => {
                         modalDescription.innerHTML = html;
                     });
-                    // 미디어 갤러리 처리
+                    // Media gallery handling
                     currentMedia = project.media || [];
                     currentMediaIndex = 0;
                     if (currentMedia.length > 0) {
@@ -402,22 +472,22 @@
             });
         });
 
-        // 모달 닫기
+        // Close modal
         closeModal.addEventListener("click", () => {
             modal.style.display = "none";
             modalDescription.innerHTML = "";
             galleryContainer.style.display = "none";
-            // 모든 비디오 정지
+            // Stop all videos
             galleryContainer.querySelectorAll("video").forEach(video => video.pause());
         });
 
-        // 모달 외부 클릭 시 닫기
+        // Close on outside modal click
         window.addEventListener("click", (event) => {
             if (event.target === modal) {
                 modal.style.display = "none";
                 modalDescription.innerHTML = "";
                 galleryContainer.style.display = "none";
-                // 모든 비디오 정지
+                // Stop all videos
                 galleryContainer.querySelectorAll("video").forEach(video => video.pause());
             }
         });
